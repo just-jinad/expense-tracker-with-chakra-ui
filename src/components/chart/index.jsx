@@ -1,9 +1,9 @@
-import React from 'react'
+
 import Chart from 'react-apexcharts'
-const TransactionChartSummary = ({expense = 100, income = 100}) => {
-  const options = {
-    labels: ['expense', 'Income'],
-    colors: ['red', 'blue'],
+
+const options = {
+    labels: ["expense", "Income"],
+    colors:["#ff8d39", "#384b63"],
     chart:{
         width: '50px'
     },
@@ -32,7 +32,7 @@ const TransactionChartSummary = ({expense = 100, income = 100}) => {
         }
     },
     fill:{
-        colors: ['red', 'blue']
+        colors: ['#ff8d39', "#384b63"]
     },
     tooltip:{
         enabled: true,
@@ -44,6 +44,7 @@ const TransactionChartSummary = ({expense = 100, income = 100}) => {
         }
     }
   }
+  const TransactionChartSummary = ({expense = 100, income = 100}) => {
   return (
     <>
     <Chart

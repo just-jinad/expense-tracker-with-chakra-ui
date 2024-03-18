@@ -1,9 +1,10 @@
-import { Button, Flex, Heading } from '@chakra-ui/react'
+import { Button, Flex, Heading, useDisclosure } from '@chakra-ui/react'
 import React from 'react'
 import Summary from '../summary'
 import Expenseview from '../expense-view/Expenseview'
 
 const Main = () => {
+  const {isOpen, onOpen, onClose} = useDisclosure()
   return (
    <>
     <Flex textAlign={'center'} flexDirection={'column'} pl={5} pr={5}>
@@ -12,7 +13,7 @@ const Main = () => {
             Expense Tracker
         </Heading>
         <Flex alignItems={'center'}>
-          <Button
+          <Button onClick={onOpen}
           bg={'blue.500'}
           color={'black'}
           ml={4}
@@ -22,7 +23,8 @@ const Main = () => {
         </Flex>
       </Flex>
 
-      <Summary/>
+      <Summary isOpen={isOpen} onClose={onClose}/>
+
     <Flex w='full' alignItems={'flex-start'} justifyContent={'space-evenly'} flexDirection={['column', 'column', 'column', 'row', 'row']}>
     <Expenseview/>
     <Expenseview/>

@@ -3,7 +3,7 @@ import React from "react";
 import TransactionForm from "../add-transaction";
 import TransactionChartSummary from "../chart";
 
-const Summary = () => {
+const Summary = ({onClose, isOpen}) => {
   return (
     <>
       {/* <div>User over view</div> */}
@@ -75,7 +75,7 @@ const Summary = () => {
             </Heading>
           </Box>
         </Flex>
-        {/* <TransactionForm onClose={onClose} isOpen={isOpen} /> */}
+        <TransactionForm onClose={onClose} isOpen={isOpen} />
       </Box>
     </>
   );
